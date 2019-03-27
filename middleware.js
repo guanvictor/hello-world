@@ -19,7 +19,8 @@ app.get('/', (request, response) => {
             'BCIT',
             'SFU',
             'UBC',
-            'UVIC'
+            'UVIC',
+            'LUL'
         ]
     })
 });
