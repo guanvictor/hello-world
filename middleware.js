@@ -11,19 +11,19 @@ var app = express();
 //
 // });
 
-app.get('/', (request, response) => {
-    // response.send('<h1>Hello Express!</h1>');
-    response.send({
-        name: 'Your name',
-        school: [
-            'BCIT',
-            'SFU',
-            'UBC',
-            'UVIC',
-            'LUL'
-        ]
-    })
-});
+// app.get('/', (request, response) => {
+//     // response.send('<h1>Hello Express!</h1>');
+//     response.send({
+//         name: 'Your name',
+//         school: [
+//             'BCIT',
+//             'SFU',
+//             'UBC',
+//             'UVIC',
+//             'LUL'
+//         ]
+//     })
+// });
 
 
 app.use((request, response, next) => {
@@ -40,14 +40,14 @@ app.use((request, response, next) => {
 
 
 
-//
-// app.get('/info', (request,response) => {
-//     response.render('about.hbs', {
-//         title: 'UNF',
-//         year: new Date().getFullYear()
-//         //welcome: 'Hello!'
-//     });
-// });
+
+app.get('/info', (request,response) => {
+    response.render('about.hbs', {
+        title: 'UNF',
+        year: new Date().getFullYear()
+        //welcome: 'Hello!'
+    });
+});
 
 app.get('/404', (request,response) => {
     response.send({
