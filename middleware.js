@@ -56,6 +56,7 @@ app.use((request, response, next) => {
     response.render("maintenance.hbs")
 });
 
+console.log("New Line");
 
 
 app.listen(port, () => {
