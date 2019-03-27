@@ -2,13 +2,14 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 8080;
+
 var app = express();
 
-app.use(express.static(__dirname + '/public'));
 
-app.use((request, response, next) => {
-
-});
+// app.use((request, response, next) => {
+//
+// });
 
 app.get('/', (request, response) => {
     // response.send('<h1>Hello Express!</h1>');
@@ -39,24 +40,24 @@ app.get('/404', (request,response) => {
     })
 });
 
-app.use((request, response, next) => {
-    var time = new Date().toString();
-    var log = `${time}: ${request.method} ${request.url}`;
-    fs.appendFile('server.log'), log + '\n', (error) => {
-        if (error) {
-            console.log('Unable to log message');
-        }
-    };
-    //console.log(`${time}: ${request.method} ${request.url}`);
-    next();
-});
+// app.use((request, response, next) => {
+//     var time = new Date().toString();
+//     var log = `${time}: ${request.method} ${request.url}`;
+//     fs.appendFile('server.log', log + '\n', (error) => {
+//         if (error) {
+//             console.log('Unable to log message');
+//         }
+//     };
+//     //console.log(`${time}: ${request.method} ${request.url}`);
+//     next();
+// });
 
 app.use((request, response, next) => {
-    response.render("maintenance.html")
+    response.render("maintenance.hbs")
 });
 
 
 
-app.listen(8080, () => {
-    console.log('Server is up on port 8080');
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`);
 });
