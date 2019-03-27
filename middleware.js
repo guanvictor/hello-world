@@ -18,7 +18,8 @@ app.get('/', (request, response) => {
         school: [
             'BCIT',
             'SFU',
-            'UBC'
+            'UBC',
+            'UVIC'
         ]
     })
 });
@@ -52,9 +53,9 @@ app.get('/404', (request,response) => {
 //     next();
 // });
 
-app.use((request, response, next) => {
-    response.render("maintenance.hbs")
-});
+// app.use((request, response, next) => {
+//     response.render("maintenance.hbs")
+// });
 
 console.log("New Line");
 
